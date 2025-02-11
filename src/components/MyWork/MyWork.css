@@ -1,0 +1,166 @@
+.mywork {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    margin: 80px 100px;
+}
+
+.mywork-title {
+    position: relative;
+    text-align: center;
+}
+
+.mywork-title h1 {
+    padding: 0px 30px;
+    font-size: 50px;
+    font-weight: 600;
+    color: white;
+}
+
+.mywork-title img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.mywork-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.mywork-item {
+    width: 100%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.mywork-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(255, 0, 255, 0.3);
+}
+
+.mywork-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* .mywork-item img:hover {
+    transform: scale(1.05);
+    border: 4px solid #ff00ff;
+    border-radius: 10px;
+} */
+
+.mywork-item h3 {
+    font-size: 22px;
+    color: #fff;
+    font-weight: 600;
+    margin: 15px 0 8px;
+}
+
+.mywork-item p {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ddd;
+    width: 90%;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+.mywork-showmore {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    border-radius: 50px;
+    border: 2px solid white;
+    padding: 20px 40px;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.mywork-showmore:hover {
+    gap: 30px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .mywork {
+        margin: 50px 50px;
+        gap: 50px;
+    }
+
+    .mywork-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .mywork-item {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .mywork {
+        gap: 50px;
+        margin: 50px 30px;
+    }
+
+    .mywork-title h1 {
+        font-size: 40px;
+        padding: 0;
+    }
+
+    .mywork-container {
+        gap: 20px;
+    }
+
+    .mywork-item {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .mywork-item img {
+        width: 100%;
+    }
+
+    .mywork-showmore {
+        padding: 15px 30px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mywork {
+        gap: 40px;
+        margin: 30px 20px;
+    }
+
+    .mywork-title h1 {
+        font-size: 32px;
+    }
+
+    .mywork-showmore {
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+}

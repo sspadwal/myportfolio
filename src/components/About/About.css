@@ -1,0 +1,197 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    margin: 80px 170px;
+}
+
+#tsparticles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.about-title {
+    position: relative;
+    text-align: center;
+}
+
+.about-title h1 {
+    padding: 0px 30px;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.about-title img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.about-sections {
+    display: flex;
+    gap: 80px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+/* Left Section */
+.about-left {
+    flex: 1;
+}
+
+.about-para {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.6;
+    text-align: start;
+}
+
+/* Right Section - Skills */
+.about-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about-skill {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.3s;
+}
+
+.about-skill p {
+    font-size: 18px;
+    font-weight: 500;
+    width: 150px;
+}
+
+/* Animated Progress Bar */
+.progress-bar {
+    position: relative;
+    width: 100%;
+    height: 8px;
+    background: #ddd;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.progress-bar span {
+    display: block;
+    height: 100%;
+    background: linear-gradient(264deg, #DF8908 -5.09%, #B415FF 106.28%);
+    border-radius: 50px;
+    animation: fillAnimation 1.5s ease-in-out;
+}
+
+
+
+
+
+@keyframes typing {
+    0% {
+        content: "Web D";
+    }
+
+    20% {
+        content: "Web Developer";
+    }
+
+    40% {
+        content: "Frontend Developer";
+    }
+
+    60% {
+        content: "React Developer";
+    }
+
+    80% {
+        content: "Full Stack Developer";
+    }
+
+    100% {
+        content: "Web Developer";
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+
+
+
+
+@keyframes fillAnimation {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.about-skill:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about {
+        gap: 50px;
+        margin: 50px 30px;
+        align-items: center;
+    }
+
+    .about-title h1 {
+        font-size: 40px;
+        padding: 0;
+    }
+
+    .about-title img {
+        width: 100px;
+        right: -10px;
+    }
+
+    .about-sections {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-left {
+        width: 100%;
+    }
+
+    .about-right {
+        width: 100%;
+    }
+
+    .about-skill p {
+        width: auto;
+    }
+
+    .progress-bar {
+        width: 70%;
+    }
+}
