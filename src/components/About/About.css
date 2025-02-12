@@ -1,3 +1,4 @@
+/* Base About Styles */
 .about {
     display: flex;
     flex-direction: column;
@@ -5,6 +6,7 @@
     justify-content: center;
     gap: 80px;
     margin: 80px 170px;
+    position: relative;
 }
 
 #tsparticles {
@@ -100,46 +102,6 @@
     animation: fillAnimation 1.5s ease-in-out;
 }
 
-
-
-
-
-@keyframes typing {
-    0% {
-        content: "Web D";
-    }
-
-    20% {
-        content: "Web Developer";
-    }
-
-    40% {
-        content: "Frontend Developer";
-    }
-
-    60% {
-        content: "React Developer";
-    }
-
-    80% {
-        content: "Full Stack Developer";
-    }
-
-    100% {
-        content: "Web Developer";
-    }
-}
-
-@keyframes blink {
-    50% {
-        border-color: transparent;
-    }
-}
-
-
-
-
-
 @keyframes fillAnimation {
     from {
         width: 0%;
@@ -156,15 +118,58 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
     .about {
-        gap: 50px;
-        margin: 50px 30px;
-        align-items: center;
+        margin: 80px 100px;
+    }
+
+    .about-title h1 {
+        font-size: 45px;
+    }
+
+    .about-sections {
+        gap: 60px;
+    }
+
+    .about-para {
+        font-size: 18px;
+    }
+
+    .about-skill p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 992px) {
+    .about {
+        margin: 80px 50px;
     }
 
     .about-title h1 {
         font-size: 40px;
+    }
+
+    .about-sections {
+        gap: 40px;
+    }
+
+    .about-para {
+        font-size: 16px;
+    }
+
+    .about-skill p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about {
+        gap: 50px;
+        margin: 50px 30px;
+    }
+
+    .about-title h1 {
+        font-size: 36px;
         padding: 0;
     }
 
@@ -193,5 +198,33 @@
 
     .progress-bar {
         width: 70%;
+    }
+}
+
+@media (max-width: 480px) {
+    .about {
+        gap: 30px;
+        margin: 30px 20px;
+    }
+
+    .about-title h1 {
+        font-size: 28px;
+    }
+
+    .about-title img {
+        width: 80px;
+        right: -5px;
+    }
+
+    .about-para {
+        font-size: 14px;
+    }
+
+    .about-skill p {
+        font-size: 12px;
+    }
+
+    .progress-bar {
+        width: 60%;
     }
 }

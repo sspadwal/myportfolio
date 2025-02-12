@@ -1,3 +1,4 @@
+/* Base MyWork Styles */
 .mywork {
     display: flex;
     flex-direction: column;
@@ -45,11 +46,14 @@
     text-align: center;
     padding: 20px;
     transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0px 4px 15px rgba(255, 0, 255, 0.2);
+    /* Initial box shadow */
 }
 
 .mywork-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0px 10px 20px rgba(255, 0, 255, 0.3);
+    box-shadow: 0px 10px 30px rgba(255, 0, 255, 0.4);
+    /* Enhanced box shadow on hover */
 }
 
 .mywork-item img {
@@ -58,12 +62,6 @@
     border-radius: 8px;
     transition: transform 0.3s ease-in-out;
 }
-
-/* .mywork-item img:hover {
-    transform: scale(1.05);
-    border: 4px solid #ff00ff;
-    border-radius: 10px;
-} */
 
 .mywork-item h3 {
     font-size: 22px;
@@ -80,6 +78,35 @@
     width: 90%;
     margin: 0 auto;
     text-align: justify;
+}
+
+/* Technologies Section */
+.tech-stack {
+    margin-top: 15px;
+}
+
+.tech-stack strong {
+    font-size: 16px;
+    color: #fff;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.tech-stack ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.tech-stack li {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #fff;
 }
 
 .mywork-showmore {
@@ -103,6 +130,16 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+    .mywork {
+        margin: 80px 50px;
+    }
+
+    .mywork-item {
+        max-width: 350px;
+    }
+}
+
 @media (max-width: 1024px) {
     .mywork {
         margin: 50px 50px;
@@ -110,7 +147,6 @@
     }
 
     .mywork-container {
-        flex-direction: column;
         gap: 20px;
     }
 
@@ -143,6 +179,14 @@
         width: 100%;
     }
 
+    .tech-stack strong {
+        font-size: 14px;
+    }
+
+    .tech-stack li {
+        font-size: 12px;
+    }
+
     .mywork-showmore {
         padding: 15px 30px;
         font-size: 16px;
@@ -157,6 +201,32 @@
 
     .mywork-title h1 {
         font-size: 32px;
+    }
+
+    .mywork-title img {
+        width: 100px;
+        right: -5px;
+    }
+
+    .mywork-item {
+        padding: 10px;
+    }
+
+    .mywork-item h3 {
+        font-size: 20px;
+    }
+
+    .mywork-item p {
+        font-size: 14px;
+    }
+
+    .tech-stack strong {
+        font-size: 12px;
+    }
+
+    .tech-stack li {
+        font-size: 10px;
+        padding: 4px 8px;
     }
 
     .mywork-showmore {

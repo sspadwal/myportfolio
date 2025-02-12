@@ -1,7 +1,7 @@
-import './MyWork.css'
-import theme_pattern from '../../assets/theme_pattern.svg'
-import mywork_data from '../../assets/mywork_data'
-import arrow_icon from '../../assets/arrow_icon.svg'
+import './MyWork.css';
+import theme_pattern from '../../assets/theme_pattern.svg';
+import mywork_data from '../../assets/mywork_data';
+import arrow_icon from '../../assets/arrow_icon.svg';
 
 function MyWork() {
     return (
@@ -19,8 +19,17 @@ function MyWork() {
                             </a>
                             <h3>{work.w_name}</h3>
                             <p>{work.w_desc}</p>
+                            {/* Display Technologies Used */}
+                            <div className="tech-stack">
+                                
+                                <ul>
+                                    {work.w_tech.map((tech, techIndex) => (
+                                        <li key={techIndex}>#{tech}</li>
+                                    ))}
+                                </ul>
+                            </div>
                         </div>
-                    )
+                    );
                 })}
             </div>
             <div className="mywork-showmore">
@@ -28,7 +37,7 @@ function MyWork() {
                 <img src={arrow_icon} alt='arrow' />
             </div>
         </div>
-    )
+    );
 }
 
 export default MyWork;

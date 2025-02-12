@@ -1,55 +1,68 @@
-.hero{
+/* Base Hero Styles */
+.hero {
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 15px;
-}
-.hero img{
-    margin-top: 10px;
+    padding: 20px;
 }
 
-.hero h1{
+.hero img {
+    margin-top: 10px;
+    max-width: 100%;
+    height: auto;
+}
+
+.hero h1 {
     text-align: center;
     width: 70%;
     font-size: 40px;
     font-weight: 600;
+    margin: 20px 0;
 }
 
-.hero h1 span{
-    background:linear-gradient(270deg, #DF8908 10%, #B415FF 100%);
+.hero h1 span {
+    background: linear-gradient(270deg, #DF8908 10%, #B415FF 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.hero p{
+.hero p {
     width: 50%;
     text-align: center;
     font-size: 20px;
     line-height: 40px;
+    margin: 10px 0;
 }
 
-.hero-action{
+.hero-action {
     display: flex;
     align-items: center;
     gap: 25px;
     font-size: 24px;
     font-weight: 500;
     margin-bottom: 50px;
+    flex-wrap: wrap;
+    /* Allows buttons to wrap if needed */
+    justify-content: center;
+    /* Centers buttons horizontally */
 }
 
-.hero-connect{
+.hero-connect {
     padding: 20px 40px;
     border-radius: 50px;
     background: linear-gradient(264deg, #DF8908 -5.09%, #B415FF 106.28%);
     cursor: pointer;
+    transition: 0.3s;
 }
 
-.hero-resume{
+.hero-resume {
     padding: 20px 70px;
     border-radius: 50px;
     border: 2px solid #FFF;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .hero-resume a {
@@ -57,51 +70,125 @@
     color: white;
 }
 
-.hero-connect:hover{
-    border:2px solid white;
+.hero-connect:hover {
+    border: 2px solid white;
 }
 
-.hero-resume:hover{
+.hero-resume:hover {
     border-color: #B415FF;
 }
 
-
-
-
-
-@media(max-width:768px){
-    .hero img{
-        margin-top: 10px;
-        /* width: 260px; */
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .hero h1 {
+        font-size: 36px;
     }
 
-    .hero h1{
-        margin-top: 50px;
-        width: 90%;
-        font-size: 40px;
-    }
-
-    .hero p{
+    .hero p {
         width: 60%;
         font-size: 18px;
-        line-height: 32px;
-        margin: 10px 0px;
+        line-height: 35px;
     }
 
-    .hero-action{
-        gap:16px;
+    .hero-action {
+        gap: 20px;
+        font-size: 22px;
+    }
+
+    .hero-connect {
+        padding: 18px 35px;
+    }
+
+    .hero-resume {
+        padding: 18px 60px;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 32px;
+        width: 80%;
+    }
+
+    .hero p {
+        width: 70%;
+        font-size: 16px;
+        line-height: 30px;
+    }
+
+    .hero-action {
+        gap: 15px;
+        font-size: 20px;
+    }
+
+    .hero-connect {
+        padding: 15px 30px;
+    }
+
+    .hero-resume {
+        padding: 15px 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero img {
+        margin-top: 20px;
+    }
+
+    .hero h1 {
+        margin-top: 30px;
+        width: 90%;
+        font-size: 28px;
+    }
+
+    .hero p {
+        width: 80%;
+        font-size: 16px;
+        line-height: 28px;
+    }
+
+    .hero-action {
+        gap: 16px;
         font-size: 18px;
-        font-weight: 500;
-        margin-bottom: 50px;
+        margin-bottom: 40px;
     }
 
-    .hero-connect{
-        padding: 20px 30px;
+    .hero-connect {
+        padding: 15px 25px;
         border-radius: 40px;
     }
 
-    .hero-resume{
-        padding: 20px 50px;
+    .hero-resume {
+        padding: 15px 40px;
         border-radius: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 24px;
+        width: 95%;
+    }
+
+    .hero p {
+        width: 90%;
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .hero-action {
+        gap: 12px;
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    .hero-connect {
+        padding: 12px 20px;
+        border-radius: 30px;
+    }
+
+    .hero-resume {
+        padding: 12px 30px;
+        border-radius: 30px;
     }
 }
