@@ -26,9 +26,11 @@ function Contact() {
         }).then((res) => res.json());
 
         if (res.success) {
-            alert(res.message)
+            alert(res.message);
+            event.target.reset();  // ✅ Clears the form after submission
         }
     };
+
 
 
     return (
@@ -61,23 +63,20 @@ function Contact() {
                     </div>
                 </div>
 
-                <form onSubmit={onSubmit} className="contact-right">
-
+                <form onSubmit={onSubmit} className="contact-right" method="POST">
                     <label htmlFor=""> Your Name  </label>
-                    <input type="text" placeholder='Enter Your Name ' name='name' />
+                    <input type="text" placeholder='Enter Your Name ' name='name' required />
 
                     <label htmlFor=""> Your Email  </label>
-                    <input type="email" placeholder='Enter Your Email ' name='email' />
+                    <input type="email" placeholder='Enter Your Email ' name='email' required />
 
                     <label htmlFor="">Write Your Message Here</label>
-                    <textarea name="message" cols="25" rows="10" placeholder='Enter Your Message '>
-                   
-                    </textarea>
+                    <textarea name="message" cols="25" rows="10" placeholder='Enter Your Message ' required></textarea>
+
                     <button type='submit' className="contact-submit">
                         Submit now
                     </button>
                 </form>
-
             </div>
         </div>
 
