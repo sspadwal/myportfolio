@@ -14,7 +14,7 @@ function Hero() {
                 <div className="hero-connect">
                     <AnchorLink className="anchor-link" offset={50} href="#contact">Connect With Me</AnchorLink></div>
                 <div className="hero-resume">
-                    <a href="/public/shailesh-padwal-resume.pdf" download="Shailesh_Padwal_Resume.pdf">
+                    <a href="/shailesh-padwal-resume.pdf" download="Shailesh_Padwal_Resume.pdf">
                         My Resume
                     </a>
                 </div>
