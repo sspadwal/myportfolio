@@ -8,7 +8,7 @@ function Hero() {
         <div id="home" className='hero'>
 
             <img src={profile_img} alt="heroimage" />
-            <h1> <span> I'm Shailesh Padwal, </span> Frontend Developer</h1>
+            <h1> <span> I&apos;m Shailesh Padwal, </span> Frontend Developer</h1>
             <p>Passionate about crafting smooth and interactive web experiences, turning ideas into reality with modern technologies.</p>
             <div className="hero-action">
                 <div className="hero-connect">
