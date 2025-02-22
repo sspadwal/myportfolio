@@ -44,7 +44,7 @@ function Contact() {
             <div className="contact-section">
                 <div className="contact-left">
                     <h1> Let's Talk</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti nobis sit pariatur, temporibus tempora quia molestiae ut nesciunt iste autem!</p>
+                    <p>I am a Frontend Developer eager to build interactive and user-friendly web applications. Open to job opportunities and collaborations—let’s connect and create impactful digital experiences!</p>
                     <div className="contact-details">
                         <div className="contact-detail">
                             <img src={mail_icon} alt="mail" />
