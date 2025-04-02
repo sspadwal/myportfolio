@@ -1,47 +1,118 @@
-import './Navbar.css'
+import { useState, useRef, useEffect } from 'react';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+import menu_open from '../../assets/menu_open.svg';
+import menu_close from '../../assets/menu_close.svg';
+import logo4 from '../../assets/logo4.png';
+import underline from '../../assets/nav_underline.svg';
+import './Navbar.css';
 
-import { useRef, useState } from 'react'
-import underline from '../../assets/nav_underline.svg'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
-import menu_open from '../../assets/menu_open.svg'
-import menu_close from '../../assets/menu_close.svg'
-import logo4 from '../../assets/logo4.png'
 function Navbar() {
+  const [activeMenu, setActiveMenu] = useState("home");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const menuRef = useRef();
+  const navbarRef = useRef();
 
-    const [menu, setMenu] = useState("home")
-    const menuRef = useRef()
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
 
-    const openMenu = () => {
-        menuRef.current.style.right = "0"
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        if (!navbarRef.current.contains(event.target)) {
+          setIsMenuOpen(false);
+        }
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  // Prevent scrolling when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
     }
+  }, [isMenuOpen]);
 
-    const closeMenu = () => {
-        menuRef.current.style.right = "-420px"
-    }
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
-    return (
-        <div className="navbar">
-            <img className='logoimg' src={logo4} alt="mainlogo" />
+  const handleMenuClick = (menuItem) => {
+    setActiveMenu(menuItem);
+    setIsMenuOpen(false);
+  };
 
-            <img src={menu_open} onClick={openMenu} alt="" className='nav-mob-open' />
+  return (
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} ref={navbarRef}>
+      <div className="navbar-container">
+        <AnchorLink href="#home" className="logo-link">
+          <img className="logoimg" src={logo4} alt="Main Logo" />
+        </AnchorLink>
 
-            <ul ref={menuRef} className="nav-menu">
-                <img src={menu_close} onClick={closeMenu} alt="" className="nav-mob-close" />
-                <li> <AnchorLink className="anchor-link" href="#home" >  <p onClick={() => setMenu("home")}>Home</p> </AnchorLink>{menu === "home" ? <img src={underline} alt="" /> : <></>}</li>
+        <button className="hamburger-btn" onClick={toggleMenu} aria-label="Toggle menu">
+          <img 
+            src={isMenuOpen ? menu_close : menu_open} 
+            alt={isMenuOpen ? "Close menu" : "Open menu"} 
+            className="menu-icon"
+          />
+        </button>
 
+        <div className={`nav-menu ${isMenuOpen ? 'open' : ''}`} ref={menuRef}>
+          <ul className="nav-list">
+            {['home', 'about', 'work', 'contact'].map((item) => (
+              <li key={item} className="nav-item">
+                <AnchorLink 
+                  href={`#${item}`} 
+                  className={`nav-link ${activeMenu === item ? 'active' : ''}`}
+                  onClick={() => handleMenuClick(item)}
+                  offset={item !== 'home' ? 50 : 0}
+                >
+                  {item.charAt(0).toUpperCase() + item.slice(1)}
+                  {activeMenu === item && <img src={underline} alt="" className="underline" />}
+                </AnchorLink>
+              </li>
+            ))}
+          </ul>
 
-                <li> <AnchorLink className="anchor-link" offset={50} href="#about" >  <p onClick={() => setMenu("about")}>About Me</p></AnchorLink> {menu === "about" ? <img src={underline} alt="" /> : <></>}</li>
-
-
-                <li> <AnchorLink className="anchor-link" offset={50} href="#work" >  <p onClick={() => setMenu("work")}>Portfolio</p></AnchorLink> {menu === "work" ? <img src={underline} alt="" /> : <></>}</li>
-
-
-                <li> <AnchorLink className="anchor-link" offset={50} href="#contact" >  <p onClick={() => setMenu("contact")}>Contact</p></AnchorLink> {menu === "contact" ? <img src={underline} alt="" /> : <></>}</li>
-            </ul>
-            <div className="nav-connect"><AnchorLink className="anchor-link" offset={50} href="#contact">Connect With Me</AnchorLink></div>
+          <AnchorLink 
+            href="#contact" 
+            className="connect-btn-mobile"
+            onClick={() => handleMenuClick('contact')}
+            offset={50}
+          >
+            Connect With Me
+          </AnchorLink>
         </div>
 
-    )
+        <AnchorLink 
+          href="#contact" 
+          className="connect-btn"
+          onClick={() => setActiveMenu('contact')}
+          offset={50}
+        >
+          Connect With Me
+        </AnchorLink>
+      </div>
+    </nav>
+  );
 }
 
-export default Navbar
+export default Navbar;

@@ -1,12 +1,14 @@
 /* Base About Styles */
+
 .about {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     gap: 80px;
     margin: 80px 170px;
     position: relative;
+    color: #fff;
+    /* Matches Hero's text color */
 }
 
 #tsparticles {
@@ -16,23 +18,36 @@
     z-index: 0;
 }
 
+
+/* Title Section */
+
 .about-title {
     position: relative;
     text-align: center;
 }
 
 .about-title h1 {
-    padding: 0px 30px;
+    padding: 0 30px;
     font-size: 50px;
     font-weight: 600;
+    background: linear-gradient(270deg, #DF8908 10%, #B415FF 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .about-title img {
     position: absolute;
-    bottom: 0;
+    bottom: -10px;
+    /* Adjusted for better overlap */
     right: 0;
     z-index: -1;
+    width: 120px;
+    /* Consistent size */
 }
+
+
+/* Sections Layout */
 
 .about-sections {
     display: flex;
@@ -41,7 +56,9 @@
     justify-content: space-between;
 }
 
-/* Left Section */
+
+/* Left Section - Paragraph */
+
 .about-left {
     flex: 1;
 }
@@ -51,17 +68,17 @@
     flex-direction: column;
     gap: 20px;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 400;
+    /* Slightly lighter for readability */
     line-height: 1.6;
-    text-align: start;
+    text-align: left;
 }
 
+
 /* Right Section - Skills */
+
 .about-right {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
 }
 
 .about-skills {
@@ -72,24 +89,27 @@
 
 .about-skill {
     display: flex;
-    gap: 20px;
     align-items: center;
-    justify-content: space-between;
-    transition: 0.3s;
+    gap: 20px;
+    transition: transform 0.3s ease;
 }
 
 .about-skill p {
+    min-width: 120px;
+    /* Consistent width for alignment */
     font-size: 18px;
     font-weight: 500;
-    width: 150px;
 }
 
-/* Animated Progress Bar */
+
+/* Progress Bar */
+
 .progress-bar {
-    position: relative;
-    width: 100%;
-    height: 8px;
-    background: #ddd;
+    flex: 1;
+    height: 10px;
+    /* Slightly thicker for visibility */
+    background: rgba(255, 255, 255, 0.1);
+    /* Subtle background */
     border-radius: 50px;
     overflow: hidden;
 }
@@ -99,42 +119,30 @@
     height: 100%;
     background: linear-gradient(264deg, #DF8908 -5.09%, #B415FF 106.28%);
     border-radius: 50px;
-    animation: fillAnimation 1.5s ease-in-out;
+    transition: width 1.5s ease-in-out;
+    /* Smooth fill animation */
 }
 
-@keyframes fillAnimation {
-    from {
-        width: 0%;
-    }
 
-    to {
-        width: 100%;
-    }
-}
+/* Hover Effect */
 
 .about-skill:hover {
     transform: scale(1.05);
-    transition: 0.3s;
 }
 
+
 /* Responsive Design */
+
 @media (max-width: 1200px) {
     .about {
         margin: 80px 100px;
     }
-
     .about-title h1 {
         font-size: 45px;
     }
-
-    .about-sections {
-        gap: 60px;
-    }
-
     .about-para {
         font-size: 18px;
     }
-
     .about-skill p {
         font-size: 16px;
     }
@@ -144,19 +152,15 @@
     .about {
         margin: 80px 50px;
     }
-
     .about-title h1 {
         font-size: 40px;
     }
-
     .about-sections {
         gap: 40px;
     }
-
     .about-para {
         font-size: 16px;
     }
-
     .about-skill p {
         font-size: 14px;
     }
@@ -167,37 +171,42 @@
         gap: 50px;
         margin: 50px 30px;
     }
-
     .about-title h1 {
         font-size: 36px;
         padding: 0;
     }
-
     .about-title img {
         width: 100px;
         right: -10px;
     }
-
     .about-sections {
         flex-direction: column;
-        align-items: center;
-        text-align: center;
+        gap: 50px;
+        /* Increased gap between sections */
     }
-
-    .about-left {
-        width: 100%;
-    }
-
+    .about-left,
     .about-right {
         width: 100%;
+        /* Full width for both sections */
     }
-
+    .about-para {
+        text-align: left;
+        /* Keep text left-aligned */
+        font-size: 16px;
+    }
+    .about-skill {
+        justify-content: flex-start;
+        /* Align items to start */
+        gap: 15px;
+    }
     .about-skill p {
-        width: auto;
+        min-width: 100px;
+        text-align: left;
+        /* Align skill names to left */
     }
-
     .progress-bar {
-        width: 70%;
+        flex: 1;
+        /* Allow progress bar to take remaining space */
     }
 }
 
@@ -206,25 +215,41 @@
         gap: 30px;
         margin: 30px 20px;
     }
-
     .about-title h1 {
         font-size: 28px;
     }
-
     .about-title img {
         width: 80px;
         right: -5px;
     }
-
+    .about-sections {
+        gap: 30px;
+    }
     .about-para {
         font-size: 14px;
     }
-
+    .about-skill {
+        /* Changed from column to row to keep progress bars visible */
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+    }
     .about-skill p {
-        font-size: 12px;
+        min-width: 100px;
+        font-size: 14px;
+        margin: 0;
     }
-
     .progress-bar {
-        width: 60%;
+        width: auto;
+        flex: 1;
+        height: 8px;
     }
+}
+
+
+/* Smooth Scrolling */
+
+html {
+    scroll-behavior: smooth;
 }

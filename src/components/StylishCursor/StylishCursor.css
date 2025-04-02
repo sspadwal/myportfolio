@@ -1,0 +1,45 @@
+/* components/StylishCursor.css */
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #646cff;
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: transform 0.1s ease;
+}
+
+.cursor-dot.pointer {
+    transform: translate(-50%, -50%) scale(1.5);
+    background-color: #ff4d4d;
+}
+
+.cursor-outline {
+    width: 30px;
+    height: 30px;
+    border: 2px solid rgba(100, 108, 255, 0.5);
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9998;
+    transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+}
+
+.cursor-outline.pointer {
+    width: 50px;
+    height: 50px;
+    border-color: rgba(255, 77, 77, 0.3);
+}
+
+
+/* Hide default cursor */
+
+html,
+* {
+    cursor: none !important;
+}

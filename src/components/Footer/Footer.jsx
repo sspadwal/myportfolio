@@ -4,7 +4,7 @@ import { FaLinkedin, FaGithub, FaWhatsapp, FaInstagram , FaYoutube} from "react-
 
 const Footer = () => {
     return (
-        <footer className="footer">
+        <footer className="footer" id="common">
             <p>© {new Date().getFullYear()} Shailesh-Padwal. All rights reserved.</p>
             <div className="social-links">
                 <a href="https://github.com/sspadwal" target="_blank">
