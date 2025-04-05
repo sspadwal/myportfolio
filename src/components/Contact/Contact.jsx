@@ -48,7 +48,7 @@ function Contact() {
                     <div className="contact-details">
                         <div className="contact-detail">
                             <img src={mail_icon} alt="mail" />
-                            <p>sspadwal01@gmail.com</p>
+                            <p>sspadwal1002@gmail.com</p>
                         </div>
 
                         <div className="contact-detail">
