@@ -5,8 +5,17 @@ import p4 from '../assets/p4.webp';
 import p5 from '../assets/p5.webp';
 import p6 from '../assets/p6.webp';
 import p7 from '../assets/p7.webp';
+import p8 from '../assets/p8.webp';
 
-const mywork_data = [
+const mywork_data = [{
+        w_no: 6,
+        w_name: "DevMindAI – AI Content & Image Generation Platform",
+        w_img: p8,
+        w_url: "https://devmindai.vercel.app/",
+        w_desc: "A PERN stack (PostgreSQL, Express.js, React.js, Node.js) AI platform with Clerk authentication and Google Gemini API integration. Features include article and blog title generation, AI image creation, background/object removal, resume review, and a community section. Fully responsive for desktop, tablet, and mobile.",
+        w_tech: ["React.js", "Node.js", "Express.js", "PostgreSQL", "Clerk", "Google Gemini API", "CSS"]
+    },
+
 
     {
         w_no: 5,
